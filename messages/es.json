@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "Página de Inicio",
+    "description": "Este es mi boilerplate"
+  },
+  "BlogPage": {
+    "title": "Página de Blog",
+    "description": "Esta es mi página de blog de mi boilerplate"
+  },
+  "Navbar":{
+    "logo":"Boilerplate",
+    "home":"Inicio",
+    "blog":"Blog",
+    "login":"Login",
+    "register":"Registrarse"
+  }
+}

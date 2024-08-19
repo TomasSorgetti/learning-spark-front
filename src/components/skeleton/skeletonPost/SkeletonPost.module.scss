@@ -1,0 +1,43 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.skelleton_card {
+    background-color: #f1f1f18e;
+    @include border-radius(12px);
+    width: 313px;
+    height: 476px;
+    display: flex;
+    flex-direction: column;
+    animation: card infinite 2s;
+
+    .skelleton_content {
+        padding: 12px 22px 22px 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}
+
+
+@keyframes card {
+    0% {
+        background-color: #f1f1f18e;
+    }
+
+    25% {
+        background-color: #f1f1f1;
+    }
+
+    50% {
+        background-color: #f1f1f1;
+    }
+
+    75% {
+        background-color: #f1f1f18e;
+    }
+
+    100% {
+        background-color: #f1f1f18e;
+    }
+}

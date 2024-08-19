@@ -1,0 +1,92 @@
+//* Poppins font
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+//* Manrope font
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/manrope-regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/manrope-medium.otf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/manrope-bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/manrope-extrabold.otf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: 'Poppins';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+}
+
+body {
+    color: #211842;
+    font-size: 1.125rem;
+    font-family: 'Manrope';
+}

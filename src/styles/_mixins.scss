@@ -1,0 +1,41 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-colum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+}
+
+@mixin transition($properties: all, $duration, $timing-function: ease) {
+    transition: $properties $duration $timing-function;
+    -webkit-transition: $properties $duration $timing-function;
+    -moz-transition: $properties $duration $timing-function;
+    -o-transition: $properties $duration $timing-function;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=$opacity * 100);
+}

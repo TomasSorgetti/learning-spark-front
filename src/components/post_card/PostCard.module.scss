@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.card {
+    width: 313px;
+    height: 476px;
+    @include border-radius(12px);
+    border: 1px solid rgba(206, 206, 206, 0.308);
+    @include box-shadow(-2px 4px 12px rgba(129, 129, 129, 0.212));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+        @include box-shadow(-6px 8px 15px rgba(129, 129, 129, 0.288));
+    }
+    .card_thumbnail{
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    .card_content {
+        padding: 12px 22px 22px 22px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .category {
+            background-color: $primary-color;
+            color: $light-text-color;
+            padding: 5px 10px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin: 12px 0;
+        }
+
+        p {
+            font-size: 0.875rem;
+        }
+
+        a {
+            color: $secondary-color;
+            transition: 0.4s ease-in-out;
+
+            &:hover {
+                font-weight: 600;
+            }
+        }
+    }
+}

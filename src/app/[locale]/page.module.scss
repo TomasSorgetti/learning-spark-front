@@ -1,0 +1,452 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+
+//********* BANNER *********//
+.banner {
+    background-image: url("/images/banner_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+
+    div {
+        max-width: 1440px;
+        margin: 0 auto;
+        height: 100%;
+        padding: 160px 0;
+
+        h1 {
+            color: $heading-color;
+            font-size: 2.63rem;
+            font-weight: 800;
+            max-width: 600px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-color: $accent-color;
+                width: 220px;
+                height: 34px;
+                bottom: 0;
+                right: 45%;
+                z-index: -1;
+            }
+        }
+
+        p {
+            max-width: 580px;
+            margin-top: 20px;
+        }
+
+        a {
+            background-color: $primary-color;
+            border: 2px solid $primary-color;
+            color: white;
+            font-weight: 600;
+            font-size: 1.50rem;
+            text-decoration: none;
+            padding: 12px 36px;
+            @include border-radius(30px);
+            display: inline-block;
+            margin-top: 40px;
+            transition: 0.4s ease-in-out;
+
+            &:hover {
+                background-color: $primary-color-hover;
+                border-color: $primary-color-hover;
+                @include box-shadow(0px 8px 15px rgba(43, 43, 43, 0.15))
+            }
+
+            &:active {
+                background-color: $primary-color-active;
+                border-color: $primary-color-active;
+                @include box-shadow(0px 8px 15px rgba(0, 0, 0, 0.25))
+            }
+        }
+    }
+}
+
+//********* BOOK *********//
+.book_cont {
+    padding: 80px 0;
+    background-image: url("/images/book_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .book_wrapper {
+        @include flex-colum;
+        gap: 100px;
+        padding-top: 120px;
+
+        .book_title {
+            color: $heading-color;
+            font-size: 3rem;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-color: $yellow-color;
+                width: 443px;
+                height: 83px;
+                z-index: -1;
+                transform: rotateZ(-3.3deg);
+                @include border-radius(4px);
+                left: -10px;
+                top: -8px;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: $violet-color;
+                width: 443px;
+                height: 70px;
+                z-index: -2;
+                transform: rotateZ(-6.6deg);
+                @include border-radius(4px);
+                left: -50px;
+                top: -26px;
+            }
+        }
+
+        .book_text {
+            text-align: center;
+
+            span {
+                color: $heading-color;
+                font-weight: 800;
+                font-size: 1.7581rem;
+            }
+
+            p {
+                color: $dark-text-color;
+                max-width: 318px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+//********* CARDS *********//
+.cards_cont {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    @include flex-colum;
+    background-image: url("/images/cards_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    .classes_cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 840px;
+
+        //* Card
+        .card {
+            @include border-radius(12px);
+            @include box-shadow(-4px 4px 20px rgba(122, 122, 122, 0.31));
+            padding: 40px;
+            width: 100%;
+            max-width: 413px;
+            height: 100%;
+            max-height: 484px;
+            text-align: center;
+
+            .card_title {
+                font-size: 1.5rem;
+                color: $heading-color;
+            }
+
+            ul {
+                list-style: none;
+                @include flex-colum;
+                gap: 20px;
+                text-align: left;
+
+                li {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    gap: 10px;
+
+                    h4 {
+                        font-size: 1.0625rem;
+                    }
+
+                    p {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+
+            .price {
+                font-size: 1.25rem;
+
+                span {
+                    font-size: 3rem;
+                    font-weight: 800;
+                }
+            }
+
+            .btn {
+                background-color: $primary-color;
+                border: 2px solid $primary-color;
+                color: white;
+                font-weight: 600;
+                font-size: 1.25rem;
+                text-decoration: none;
+                padding: 12px 36px;
+                @include border-radius(30px);
+                display: inline-block;
+                transition: 0.4s ease-in-out;
+
+                &:hover {
+                    background-color: $primary-color-hover;
+                    border-color: $primary-color-hover;
+                    @include box-shadow(0px 8px 15px rgba(43, 43, 43, 0.15))
+                }
+
+                &:active {
+                    background-color: $primary-color-active;
+                    border-color: $primary-color-active;
+                    @include box-shadow(0px 8px 15px rgba(0, 0, 0, 0.25))
+                }
+            }
+        }
+
+        //* Left card
+        .left_card {
+            background-color: white;
+
+            .card_title {
+                color: $heading-color;
+            }
+
+            ul {
+                margin-top: 40px;
+
+                li {
+                    h4 {
+                        color: $heading-color;
+                    }
+
+                    p {
+                        color: $dark-text-color;
+                    }
+                }
+            }
+
+            .price {
+                color: $heading-color;
+                margin: 20px auto;
+            }
+
+        }
+
+        //* Right card
+        .right_card {
+            background-color: $secondary-color;
+
+            .card_title {
+                color: $light-text-color;
+            }
+
+            .card_subtitle {
+                color: $primary-color;
+                font-size: 0.75rem;
+            }
+
+            ul {
+                margin-top: 10px;
+
+                li {
+                    h4 {
+                        color: $light-text-color;
+                    }
+
+                    p {
+                        color: $light-text-color;
+                    }
+                }
+            }
+
+            .price {
+                color: $light-text-color;
+                max-width: 150px;
+                margin: 30px auto;
+                line-height: 25px;
+            }
+        }
+
+
+
+    }
+
+    .statue_card_1 {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 840px;
+        height: 391px;
+        background-image: url("/images/card_statue_1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include border-radius(24px);
+
+        div {
+            height: 100%;
+            @include flex-colum;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 60px;
+            color: $light-text-color;
+
+            span {
+                font-size: 3.5rem;
+                font-weight: 800;
+            }
+
+            p {
+                font-size: 1.75rem;
+            }
+        }
+    }
+
+    .statue_card_2 {
+        background-image: url("/images/card_statue_2_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include border-radius(24px);
+        width: 100%;
+        max-width: 840px;
+        height: 391px;
+        margin-top: 40px;
+        position: relative;
+
+        img {
+            position: absolute;
+            z-index: 1;
+            top: -20px;
+        }
+
+        .card_text_wrapper {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            div {
+                height: 100%;
+                width: 100%;
+                max-width: 410px;
+                @include flex-colum;
+                align-items: flex-start;
+                justify-content: center;
+                padding-right: 40px;
+                color: $light-text-color;
+
+                img {
+                    margin-top: 20px;
+                    position: relative;
+                }
+
+                h3 {
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                }
+
+                p {
+                    font-size: 1.125rem;
+                }
+            }
+        }
+    }
+}
+
+
+.about_cont {
+    margin: 230px auto;
+    width: 100%;
+    max-width: 1064px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px;
+
+    img {
+        @include border-radius(24px);
+    }
+
+    .about_text {
+        span {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 2.1875rem;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-color: $accent-color;
+                z-index: -1;
+                height: 24px;
+                width: 280px;
+                right: 225px;
+                bottom: 2px;
+            }
+        }
+
+        .about_description {
+            margin-top: 20px;
+            @include flex-colum;
+            gap: 10px;
+            font-size: 1.0625rem;
+        }
+    }
+}
+
+.contact {
+    height: 399px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: $secondary-color;
+    color: $light-text-color;
+
+    div {
+        padding: 80px 120px;
+
+        h2 {
+            font-size: 2.3rem;
+        }
+
+        p {
+            margin: 20px 0;
+            font-size: 0.875rem;
+            max-width: 378px;
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                margin-top: 20px;
+
+                a {
+                    color: $light-text-color;
+                    text-decoration: none;
+                    font-size: 1.0625rem;
+                }
+            }
+        }
+    }
+}

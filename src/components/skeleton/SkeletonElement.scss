@@ -1,0 +1,38 @@
+.skeleton {
+    background-color: #e0e0e07e;
+    margin: 10px 0;
+}
+
+.skeleton.text {
+    width: 100%;
+    height: 12px;
+}
+
+.skeleton.title {
+    width: 50%;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.skeleton.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.skeleton.thumbnail {
+    width: 313px;
+    height: 212px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.skeleton.button {
+    width: 100px;
+    height: 24px;
+}
+
+.skeleton.category {
+    width: 100px;
+    height: 18px;
+}
