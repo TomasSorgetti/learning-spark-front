@@ -11,8 +11,9 @@ export default function BlogPage() {
     <main className={styles.main}>
       <BlogSlider />
       <h1>Most viewed blog posts</h1>
-      {/* <PopularPosts /> */}
-      {/* <Posts /> */}
+      <PopularPosts />
+      <h2>Search for a post</h2>
+      <Posts />
     </main>
   );
 }
