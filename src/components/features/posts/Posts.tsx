@@ -5,7 +5,7 @@ import { fetchPosts } from "@/lib/features/blog/blogSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { useEffect, useState } from "react";
 // import dynamic from "next/dynamic";
-import SkeletonPost from "../skeleton/skeletonPost/SkeletonPost";
+import SkeletonPost from "../../ui/skeleton/skeletonPost/SkeletonPost";
 import PostCard from "../post_card/PostCard";
 import BasicPagination from "../pagination/Pagination";
 
