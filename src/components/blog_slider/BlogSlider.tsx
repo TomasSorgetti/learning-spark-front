@@ -24,12 +24,12 @@ export default function LatestPosts() {
   }, []);
 
   //* Slider Interval
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     nextChange();
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // }, [cardIndex, posts]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextChange();
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [cardIndex, posts]);
 
   //* Handles change card
   const prevChange = () => {
@@ -106,7 +106,7 @@ export default function LatestPosts() {
                       <span></span>
                     </div>
                     <p>{cutDescription(description)}...</p>
-                    <p>
+                    <p className={styles.author}>
                       <span>{author}</span>
                       {formatDate(createdAt)}
                     </p>

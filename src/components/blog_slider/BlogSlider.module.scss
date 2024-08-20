@@ -5,7 +5,7 @@
     height: 488px;
     width: 100%;
     position:relative;
-    background-color: rgb(169, 169, 169);
+    background-color: rgb(230, 230, 230);
     overflow: hidden;
     .btn{
         position: absolute;
@@ -50,7 +50,7 @@
                 color: white;
                 .left{
                     background-color: $secondary-color;
-                    width: 50%;
+                    width: 900px;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -109,8 +109,8 @@
                     }
                 }
                 .rigth{
-                    background-color: rgba(0, 0, 0, 0.509);
-                    width: 50%;
+                    background-color: rgba(0, 0, 0, 0.608);
+                    width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -121,6 +121,7 @@
                     .line{
                         display: flex;
                         gap: 20px;
+                        margin-left: 12px;
                         span{
                             width: 15px;
                             height: 15px;
@@ -138,6 +139,9 @@
                         span{
                             font-weight: 600;
                         }
+                    }
+                    .author{
+                        margin-left: 10px;
                     }
 
                 }

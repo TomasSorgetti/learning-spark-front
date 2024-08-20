@@ -23,7 +23,7 @@ export default function Posts() {
       (status === "idle" && data.posts.length === 0) ||
       page !== data.currentPage
     ) {
-      const limit = 6;
+      const limit = 8;
       const payload = { page, limit };
       dispatch(fetchPosts(payload));
     }
@@ -34,25 +34,27 @@ export default function Posts() {
   };
 
   return (
-    <div className={styles.posts}>
-      {data.posts?.length === 0 && (
-        <>
-          <SkeletonPost />
-          <SkeletonPost />
-          <SkeletonPost />
-          <SkeletonPost />
-          <SkeletonPost />
-          <SkeletonPost />
-        </>
-      )}
-      {data.posts?.map((post: any) => (
-        <PostCard key={post.id} {...post} />
-      ))}
+    <>
+      <div className={styles.posts}>
+        {data.posts?.length === 0 && (
+          <>
+            <SkeletonPost />
+            <SkeletonPost />
+            <SkeletonPost />
+            <SkeletonPost />
+            <SkeletonPost />
+            <SkeletonPost />
+          </>
+        )}
+        {data.posts?.map((post: any) => (
+          <PostCard key={post.id} {...post} />
+        ))}
+      </div>
       <BasicPagination
         currentPage={data.currentPage}
         totalPages={data.totalPages}
         onPageChange={onPageChange}
       />
-    </div>
+    </>
   );
 }

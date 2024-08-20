@@ -1,3 +1,4 @@
+import styles from "./Pagination.module.scss";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
@@ -19,13 +20,15 @@ export default function BasicPagination({
   };
 
   return (
-    <Stack spacing={2}>
-      <Pagination
-        count={totalPages}
-        color="secondary"
-        page={currentPage}
-        onChange={handlePageChange}
-      />
-    </Stack>
+    <div className={styles.pagination}>
+      <Stack spacing={2}>
+        <Pagination
+          count={totalPages}
+          color="secondary"
+          page={currentPage}
+          onChange={handlePageChange}
+        />
+      </Stack>
+    </div>
   );
 }
