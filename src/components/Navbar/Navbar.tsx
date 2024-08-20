@@ -27,16 +27,21 @@ export default function Navbar() {
             <Link href={`/`}>{t("home")}</Link>
           </li>
           <li>
+            <Link href={`/resourses`}>{t("resources")}</Link>
+          </li>
+          <li>
             <Link href={`/blog`}>{t("blog")}</Link>
           </li>
           <li>
-            <Link href={`/login`}>{t("login")}</Link>
+            <Link href={`/about`}>{t("about")}</Link>
           </li>
           <li>
-            <Link href={`/register`}>{t("register")}</Link>
+            <Link className={styles.login} href={`/login`}>{t("login")}</Link>
+          </li>
+          <li>
+            <ChangeLang />
           </li>
         </ul>
-        <ChangeLang />
       </nav>
     </header>
   );

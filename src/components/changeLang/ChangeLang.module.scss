@@ -1,0 +1,50 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.dropdown{
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+
+    .dropdown_menu{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 40px;
+        position: relative;
+        .flag{
+            position: absolute;
+            cursor: pointer;
+            visibility: hidden;
+            opacity: 0;
+            border: none;
+            background-color: transparent;
+            transition: 0.4s ease-in-out;
+        }
+        .flag.active{
+            visibility: visible;
+            opacity: 1;
+        }
+        .flag.show{
+            visibility: visible;
+            opacity: 1;            
+        }
+        .unactive{
+            transform: translateY(46px);
+        }
+    }
+    .btn{
+        color: $dark-text-color;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 38px;
+        cursor: pointer;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        border: none;
+        background-color: transparent;
+    }
+}

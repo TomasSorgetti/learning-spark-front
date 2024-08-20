@@ -5,13 +5,16 @@
     width: 100%;
     background-color: $light-text-color;
     @include box-shadow(0px 4px 6px rgba(122, 122, 122, 0.197));
-    padding: 20px 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
 
     .nav {
         width: 100%;
         max-width: 1440px;
         margin: 0 auto;
         @include flex-space-between;
+        height: 96px;
 
         .menu {
             @include flex-space-between;
@@ -33,7 +36,28 @@
             .logout {
                 cursor: pointer;
             }
-
+            .login{
+                background-color: $primary-color;
+                border: 2px solid $primary-color;
+                color: white;
+                font-weight: 600;
+                font-size: 1.25rem;
+                text-decoration: none;
+                padding: 6px 24px;
+                @include border-radius(30px);
+                display: inline-block;
+                transition: 0.4s ease-in-out;        
+                &:hover {
+                    background-color: $primary-color-hover;
+                    border-color: $primary-color-hover;
+                    @include box-shadow(0px 8px 15px rgba(43, 43, 43, 0.15))
+                }            
+                &:active {
+                    background-color: $primary-color-active;
+                    border-color: $primary-color-active;
+                    @include box-shadow(0px 8px 15px rgba(0, 0, 0, 0.25))
+                }
+            }
             .btn {
                 background-color: $primary-color;
                 border: 2px solid $primary-color;

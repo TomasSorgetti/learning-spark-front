@@ -5,9 +5,11 @@ import { getMessages } from "next-intl/server";
 import { LocaleProvider } from "@/providers/LocaleProvider";
 import { StoreProvider } from "@/providers/StoreProvider";
 import "./globals.scss";
+
 export const metadata: Metadata = {
-  title: "Nextjs Template i18n - redux - sass",
-  description: "Template with Next.js, i18n, redux and sass",
+  title: "Learning Spark",
+  //TODO Complete description
+  description: "Learning Spark description",
 };
 
 export default async function LocaleLayout({
