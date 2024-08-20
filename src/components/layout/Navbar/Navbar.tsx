@@ -1,11 +1,12 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import ChangeLang from "../changeLang/ChangeLang";
+import ChangeLang from "../../features/changeLang/ChangeLang";
 import { useLocale } from "next-intl";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import { Link } from "@/navigation";
+import ProfileDropdown from "../../features/profile_dropdown/ProfileDropdown";
 
 export default function Navbar() {
   const t = useTranslations("Navbar");
@@ -35,8 +36,13 @@ export default function Navbar() {
           <li>
             <Link href={`/about`}>{t("about")}</Link>
           </li>
+          <li className={styles.profile}>
+            <ProfileDropdown />
+          </li>
           <li>
-            <Link className={styles.login} href={`/login`}>{t("login")}</Link>
+            <Link className={styles.login} href={`/login`}>
+              {t("login")}
+            </Link>
           </li>
           <li>
             <ChangeLang />

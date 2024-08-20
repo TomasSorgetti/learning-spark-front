@@ -1,0 +1,32 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.dropdown{
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    .dropdown_menu{
+        @include flex-colum;
+        text-align: left;
+        gap: 18px;
+        position: absolute;
+        top: 74px;
+        left: -46px;
+        background-color: white;
+        padding: 12px 24px;
+        @include border-radius(6px);
+        @include box-shadow(0px 4px 6px rgba(122, 122, 122, 0.258));
+        visibility: hidden;
+        opacity: 0;
+        list-style: none;        
+        transition: 0.3s ease-in-out;
+        li{
+            width: 100%;
+        }
+    }
+    .dropdown_menu.show{
+        visibility: visible;
+        opacity: 1;
+    }
+}

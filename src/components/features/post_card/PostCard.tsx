@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./PostCard.module.scss";
 import { Link } from "@/navigation";
-import { formatDate } from "../../helpers/format-date";
+import { formatDate } from "../../../helpers/format-date";
 
 export default function PostCard({
   title,

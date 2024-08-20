@@ -1,5 +1,5 @@
-@import "../../styles/variables.scss";
-@import "../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .header {
     width: 100%;
@@ -31,6 +31,11 @@
             a.active {
                 color: $primary-color;
                 font-weight: 600;
+            }
+            .profile{
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .logout {
