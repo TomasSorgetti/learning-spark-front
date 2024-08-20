@@ -1,11 +1,11 @@
+@import "../../../../styles/mixins.scss";
+@import "../../../../styles/variables";
+
+
 .banner{
-    height: 400px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 605px;
     position: relative;
+    margin-top: 96px;
 
     .overlay {
         position: absolute;
@@ -15,9 +15,21 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 20px;
         left: 0;
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.395);
         color: white;
+        .category{
+            background-color: $primary-color;
+            font-size: 2.625;
+            font-weight: 700;
+            padding: 6px 46px;
+        }
+        h1{
+            font-size: 2.625;
+            font-weight: 700;
+            
+        }
     }
 }

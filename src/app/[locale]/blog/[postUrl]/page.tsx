@@ -3,76 +3,52 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { fetchPost } from "@/lib/features/post/postSlice";
 type Props = {
   params: { postUrl: string };
 };
 
 export default function BlogDetail({ params }: Props) {
-  const [data, setData] = useState({
-    title: "",
-    url: "",
-    author: "",
-    description: "",
-    image: "",
-    category: "",
-  });
+  const dispatch = useAppDispatch();
+  const { data, status } = useAppSelector((state: any) => state.post);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    try {
-      setIsLoading(true);
-      const fetchData = async () => {
-        // const response = await getPostByUrl(params.postUrl);
-        await fetch(`http://localhost:8000/api/blog/${params.postUrl}`)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data) {
-              setData(data.data);
-              setIsLoading(false);
-            }
-          });
-      };
-
-      fetchData();
-    } catch (error) {
-      setIsLoading(false);
+    if (data.url !== params.postUrl) {
+      try {
+        dispatch(fetchPost(params.postUrl));
+      } catch (error) {}
     }
-
-    return () => {
-      setData({
-        title: "",
-        url: "",
-        author: "",
-        description: "",
-        image: "",
-        card_description: "",
-        card_image: "",
-        category: "",
-      });
-      setIsLoading(false);
-    };
-  }, [params]);
+  }, [dispatch, params.postUrl]);
 
   return (
     <>
       <main>
-        <div
-          className={styles.banner}
-          style={{
-            backgroundImage: `url(http://localhost:8000/src/public/images/${data.image})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className={styles.overlay}>
-            <h1>{data.title}</h1>
-            <span>{data.author}</span>
+        {status === "loading" ? (
+          <div className={styles.loading}>
+            <h1>Loading...</h1>
           </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <p>{data.description}</p>
+        ) : (
+          <>
+            <div className={styles.banner}>
+              <Image
+                src={`http://localhost:8000/src/public/images/${data.image}`}
+                alt={data.title}
+                fill
+              />
+              <div className={styles.overlay}>
+                <span className={styles.category}>{data.category.name}</span>
+                <h1>{data.title}</h1>
+                <span>{data.author}</span>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p>{data.description}</p>
+          </>
+        )}
       </main>
     </>
   );

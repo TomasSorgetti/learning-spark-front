@@ -11,7 +11,7 @@ interface IBlogResponse {
 export const fetchPosts = createAsyncThunk<IBlogResponse, {  page: number, limit: number}>(
   'blog/fetchPosts',
   async ({ page, limit }: {  page: number, limit: number}) => {
-    const response = await fetch(`/api/posts?page=${page}&limit=${limit}`);
+    const response = await fetch(`/api/blog/posts?page=${page}&limit=${limit}`);
       const data = await response.json();
     
     return data.data

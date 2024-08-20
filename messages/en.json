@@ -10,8 +10,9 @@
   "Navbar":{
     "logo":"Boilerplate",
     "home":"Home",
+    "resources":"Resources",
     "blog":"Blog",
     "login":"Sign In",
-    "register":"Sign Up"
+    "about":"About us"
   }
 }
