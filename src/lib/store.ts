@@ -5,10 +5,11 @@ import { blogSlice } from "./features/blog/blogSlice";
 import { postSlice } from "./features/post/postSlice";
 import { latestSlice } from "./features/latest/latestSlice";
 import { popularSlice } from "./features/popular/popularSlice";
+import { authSlice } from "./features/auth/authSlice";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(quotesApiSlice,blogSlice,postSlice,latestSlice,popularSlice);
+const rootReducer = combineSlices(quotesApiSlice,blogSlice,postSlice,latestSlice,popularSlice,authSlice);
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>;
 

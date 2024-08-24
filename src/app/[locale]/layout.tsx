@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { LocaleProvider } from "@/providers/LocaleProvider";
 import { StoreProvider } from "@/providers/StoreProvider";
 import "./globals.scss";
+import AuthProvider from "@/providers/AuthProvider";
 
 export const metadata: Metadata = {
   title: "Learning Spark",
@@ -29,8 +30,10 @@ export default async function LocaleLayout({
         <body>
           <NextIntlClientProvider messages={messages}>
             <LocaleProvider>
-              <Navbar />
-              {children}
+              <AuthProvider>
+                <Navbar />
+                {children}
+              </AuthProvider>
             </LocaleProvider>
           </NextIntlClientProvider>
         </body>

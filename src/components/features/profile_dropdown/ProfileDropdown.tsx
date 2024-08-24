@@ -1,11 +1,12 @@
 "use client";
 
+import { Link } from "@/navigation";
 //* Imports
 import styles from "./ProfileDropdown.module.scss";
 import Image from "next/image";
 import { useState } from "react";
 //* Function
-export default function ProfileDropdown() {
+export default function ProfileDropdown({ isAdmin, isAuthenticated }: any) {
   const [dropdown, setDropdown] = useState(false);
 
   const handleChange = () => {
@@ -21,9 +22,20 @@ export default function ProfileDropdown() {
         height={40}
       />
       <ul className={`${styles.dropdown_menu} ${dropdown ? styles.show : ""}`}>
-        <li>Profile</li>
-        <li>Dashboard</li>
-        <li>Logout</li>
+        {!isAuthenticated ? (
+          <>
+            <li>Sign in</li>
+            <li>Sign up</li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link href="/profile">Profile</Link>
+            </li>
+            {isAdmin && <li>Dashboard</li>}
+            <li>Logout</li>
+          </>
+        )}
       </ul>
     </button>
   );

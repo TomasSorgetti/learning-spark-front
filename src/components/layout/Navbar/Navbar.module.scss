@@ -8,7 +8,20 @@
     position: fixed;
     z-index: 100;
     top: 0;
-
+    .admin_menu{
+        background-color: $secondary-color;
+        display: flex;
+        justify-content: flex-end;
+        a{
+        color: white;
+        padding: 6px 24px;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+        }
+    }
     .nav {
         width: 100%;
         max-width: 1440px;
@@ -51,6 +64,7 @@
                 padding: 6px 24px;
                 @include border-radius(30px);
                 display: inline-block;
+                cursor: pointer;
                 transition: 0.4s ease-in-out;        
                 &:hover {
                     background-color: $primary-color-hover;
