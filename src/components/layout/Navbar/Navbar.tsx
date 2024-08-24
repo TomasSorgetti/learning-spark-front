@@ -7,13 +7,32 @@ import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import { Link } from "@/navigation";
 import ProfileDropdown from "../../features/profile_dropdown/ProfileDropdown";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { logoutState } from "@/lib/features/auth/authSlice";
+import { useEffect } from "react";
+import LoadingBar from "@/components/ui/loading_bar/LoadingBar";
 
 export default function Navbar() {
   const t = useTranslations("Navbar");
   const locale = useLocale();
+  const dispatch = useAppDispatch();
+  const { user, isAuthenticated, isAdmin } = useAppSelector(
+    (state: any) => state.auth
+  );
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    dispatch(logoutState());
+  };
 
   return (
     <header className={styles.header}>
+      {/* {
+        isAdmin && <div className={styles.admin_menu}>
+          <Link href="/admin" >Dashboard</Link>
+        </div>
+      } */}
+      <LoadingBar />
       <nav className={styles.nav}>
         <Link href={`/`}>
           <Image
@@ -21,6 +40,7 @@ export default function Navbar() {
             alt="logo"
             width={132}
             height={41}
+            priority
           />
         </Link>
         <ul className={styles.menu}>
@@ -37,12 +57,21 @@ export default function Navbar() {
             <Link href={`/about`}>{t("about")}</Link>
           </li>
           <li className={styles.profile}>
-            <ProfileDropdown />
+            <ProfileDropdown
+              isAdmin={isAdmin}
+              isAuthenticated={isAuthenticated}
+            />
           </li>
           <li>
-            <Link className={styles.login} href={`/login`}>
-              {t("login")}
-            </Link>
+            {isAuthenticated ? (
+              <span onClick={handleLogout} className={styles.login}>
+                Sign out
+              </span>
+            ) : (
+              <Link className={styles.login} href={`/login`}>
+                {t("login")}
+              </Link>
+            )}
           </li>
           <li>
             <ChangeLang />

@@ -9,15 +9,13 @@ const URL_BASE = "http://localhost:8000/api"
 
 export async function POST(request: NextRequest, context: Context) {
   try {
-    const { email, password } = await request.json();
     
-      const response = await fetch(`${URL_BASE}/auth/login`, {
+      const response = await fetch(`${URL_BASE}/auth/logout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         },
       credentials: "include",
-      body: JSON.stringify({ email, password }),
     });
     const data = await response.json();
     
