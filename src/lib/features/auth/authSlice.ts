@@ -28,11 +28,14 @@ interface ILoginResponse {
 export const fetchLogin = createAsyncThunk<ILoginResponse, { email: string, password: string }>(
   'auth/fetchLogin',
   async ({ email, password }, { rejectWithValue }) => {
-    const response = await fetch(`/api/auth/login`, {
+    const response = await fetch(`http://localhost:8000/api/auth/login`, {
+    // const response = await fetch(`/api/auth/login`, {
       method: "POST",
+      cache: "no-cache",
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify({ email, password }),
     });
 
@@ -54,12 +57,17 @@ export const fetchUser = createAsyncThunk(
     const response = await fetch('http://localhost:8000/api/users/me', {
     // const response = await fetch('/api/auth/me', {
       method: 'GET',
-      credentials: 'include'
+      credentials: 'include',
+      cache: 'no-cache',
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     if (!response.ok) {
       throw new Error('Failed to fetch user');
     }
     const data = await response.json(); 
+    
     
     return data.payload
   }

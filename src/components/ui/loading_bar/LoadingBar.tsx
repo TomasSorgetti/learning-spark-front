@@ -22,6 +22,7 @@ export default function LoadingBar() {
     return () => clearInterval(interval);
   }, [auth.status, auth.isAuthenticated]);
 
+
   return (
     <div style={{ width: "100%", height: "4px", backgroundColor: "white" }}>
       <div
