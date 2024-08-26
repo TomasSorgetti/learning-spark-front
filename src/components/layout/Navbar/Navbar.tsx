@@ -20,9 +20,12 @@ export default function Navbar() {
     (state: any) => state.auth
   );
 
-  const handleLogout = () => {
-    localStorage.removeItem("accessToken");
+  const handleLogout = async () => {
     dispatch(logoutState());
+    await fetch("http://localhost:8000/api/auth/logout", {
+      method: "POST",
+      credentials: "include",
+    });
   };
 
   return (

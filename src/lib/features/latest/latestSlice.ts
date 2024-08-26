@@ -5,7 +5,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchLatestPosts = createAsyncThunk(
   'blog/fetchLatestPosts',
   async (limit: number ) => {
-    const response = await fetch(`/api/blog/latest?limit=${limit}`);
+    // const response = await fetch(`/api/blog/latest?limit=${limit}`);
+    const response = await fetch(`http://localhost:8000/api/blog/latest?limit=${limit}`);
       const data = await response.json();
     
     return data.data
