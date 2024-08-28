@@ -1,19 +1,20 @@
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+"use client";
+
+import styles from "./page.module.scss";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Profile() {
-  const dispatch = useAppDispatch();
-  const { isAuthenticated, isAdmin, user } = useAppSelector(
+  const dispatch = useDispatch();
+  const { isAuthenticated, isAdmin, user } = useSelector(
     (state: any) => state.auth
   );
   return (
-    <main>
+    <main className={styles.profile_container}>
       <h1>Profile Page</h1>
       {isAuthenticated ? (
         <div>
           <p>Welcome {user.name}</p>
-          <p>LastName: {user.lastName}</p>
           <p>Email: {user.email}</p>
-          
         </div>
       ) : (
         <p>Please login</p>

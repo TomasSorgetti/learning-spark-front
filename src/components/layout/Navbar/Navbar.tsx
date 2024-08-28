@@ -35,7 +35,7 @@ export default function Navbar() {
           <Link href="/admin" >Dashboard</Link>
         </div>
       } */}
-      <LoadingBar />
+      {/* <LoadingBar /> */}
       <nav className={styles.nav}>
         <Link href={`/`}>
           <Image
