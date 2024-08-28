@@ -64,10 +64,10 @@ export const blogSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
-        const newData = action.payload;        
+        const newData = action.payload;      
 
         if (JSON.stringify(state.data) !== JSON.stringify(newData)) {
-          state.status = 'succeeded';
+          state.status = 'idle';
           state.data = newData;
         }
       })

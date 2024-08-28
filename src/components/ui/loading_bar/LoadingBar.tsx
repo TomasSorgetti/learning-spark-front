@@ -6,22 +6,16 @@ import { useEffect, useState } from "react";
 export default function LoadingBar() {
   const [progress, setProgress] = useState(0);
   const auth = useAppSelector((state: any) => state.auth);
+  const blog = useAppSelector((state: any) => state.blog);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (auth.status === "loading") {
-        setProgress((prevProgress) =>
-          prevProgress >= 30 ? 0 : prevProgress + 10
-        );
-      } else if (auth.isAuthenticated) {
-        setProgress((prevProgress) =>
-          prevProgress === 100 ? 0 : prevProgress + 70
-        );
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [auth.status, auth.isAuthenticated]);
-
+    if (auth.status === "loading" || blog.status === "loading") {
+      setProgress(30);
+    }
+    if (auth.status === "idle") {
+      setProgress(0);
+    }
+  }, [auth.status, blog.status]);
 
   return (
     <div style={{ width: "100%", height: "4px", backgroundColor: "white" }}>
